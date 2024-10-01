@@ -64,22 +64,26 @@ public class DLL<T> {
         else
             current = current.next;
     }
-    public void removeBetween(T e1, T e2) {
-	    if(empty())
-		    return;
-	    findFirst();
-	node f1 =null,f2=null;
-	while(current.next!=null){
-if(current.data.equals(e1))
-	f1 = current;
-if(current.data.equals(e2))
-	f2 = current;
-	}
-	    if (f1 == null || f2 == null){
+    public void removeBetween(T e1, T e2) { if (head == null) return;
+    	findFirst();
+        DLLNode<T> node1 = null;
+        DLLNode<T> node2 = null;
+        while (current != null) {
+            if (current.data.equals(e1)) {
+                node1 = current;
+            } else if (current.data.equals(e2)) {
+                node2 = current;
+                break; 
+            }
+            current = current.next;
+        }
+        if (node1 == null || node2 == null){
 		findFirst();
 		return;}
-	     current = f1;
-        current.next = f2;
+         current = node1;
+        current.next = node2;
+        node2.previous = current;
+        
 	    findFirst();
 	    
         // Write the method removeBetween, member of the class DoubleLinkedList. The method
