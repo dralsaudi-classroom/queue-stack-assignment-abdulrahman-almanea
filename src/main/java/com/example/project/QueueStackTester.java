@@ -39,10 +39,11 @@ public class QueueStackTester {
     {
            if(st.empty()) 
                 return false;
-        boolean f ;
+         boolean f ;
         T temp= st.pop();
-        f = (temp.equals(e) ||  search(Stack<T> st, T e));
+        f= (temp.equals(e) ||  search(st, e));
         st.push(temp);
+        
         return f;
    
     }
