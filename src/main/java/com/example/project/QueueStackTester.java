@@ -1,15 +1,17 @@
 package com.example.project;
 
 public class QueueStackTester {
+    
     public static <T> void split(Queue<T> q, Queue<T> oq, Queue<T> eq)
     {
       QueueSplit(q,oq,eq,1);
     }
 
- public static <T> void QueueSplit(Queue<T> q, Queue<T> oq, Queue<T> eq,int i){
-    if(q.length()==0)
+    
+     public static <T> void QueueSplit(Queue<T> q, Queue<T> oq, Queue<T> eq,int i){
+        if(q.length()==0)
         return;
-     if (index % 2 == 0) {
+         if (index % 2 == 0) {
          eq.add(element);
         } else {
          oq.add(element);
@@ -34,6 +36,7 @@ public class QueueStackTester {
                      pq.enqueue(temp);
                 }
 
+    }
     }
     public static <T> boolean search(Stack<T> st, T e)
     {
