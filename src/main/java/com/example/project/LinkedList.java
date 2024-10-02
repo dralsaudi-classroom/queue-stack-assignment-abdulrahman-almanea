@@ -55,7 +55,9 @@ public class LinkedList<T> implements List<T>{
         }
     }
     public T mostFrequentElement() {
-        if (head == null) return null;
+        if (head == null)
+		return null;
+	    
     	  current = head;
     	  Node<T>  mostFrequent = head;
     	  int count , maxCount = 1;
@@ -76,6 +78,7 @@ public class LinkedList<T> implements List<T>{
     	            }
     	        current = current.next;
     	   }
+	    current = head;
     	   return mostFrequent.data;
     }
 }
