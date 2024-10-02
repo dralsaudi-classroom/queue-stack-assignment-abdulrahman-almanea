@@ -11,7 +11,7 @@ public class QueueStackTester {
      public static <T> void QueueSplit(Queue<T> q, Queue<T> oq, Queue<T> eq,int i){
         if(q.length()==0)
         return;
-         Node<T> temp =q.serve();
+         T temp =q.serve();
          if (i % 2 == 0) {
          eq.enqueue(temp);
         } else {
