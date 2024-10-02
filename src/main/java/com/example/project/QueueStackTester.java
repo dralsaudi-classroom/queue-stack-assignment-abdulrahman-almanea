@@ -25,19 +25,20 @@ public class QueueStackTester {
 
 
     
- public static <T> void remove(LinkedPQ<T> pq, int p)
+     public static <T> void remove(LinkedPQ<T> pq, int p)
     {
               LinkedPQ<T> tempQueue = new LinkedPQ<>();
             while (pq.length()!=0) {
             PQElement<T> temp = pq.serve();
 
             if (temp.p >= p) {
-                tempQueue.enqueue(temp.data, p);
+                tempQueue.enqueue(temp.data, temp.p);
                
             }     
     }
             while(tempQueue.length()!=0) {
-            pq.enqueue(tempQueue.serve().data, p);   }
+            	PQElement<T> temp = tempQueue.serve();	
+            pq.enqueue(temp.data, temp.p);   }
     }
     
     public static <T> boolean search(Stack<T> st, T e)
