@@ -28,8 +28,8 @@ public class QueueStackTester {
     {
               LinkedPQ<T> tempQueue = new LinkedPQ<>();
             while (pq.length()!=0) {
-        PQElement<T> temp = pq.serve();
-            if (temp.data.priority >= p) {
+        PQNode<T> temp = pq.serve();
+            if (temp.priority >= p) {
                 tempQueue.enqueue(temp);
                 pq.enqueue(temp);
             }
