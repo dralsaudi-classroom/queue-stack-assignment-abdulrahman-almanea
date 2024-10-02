@@ -15,7 +15,7 @@ public class QueueStackTester {
          if (i % 2 == 0) {
          eq.enqueue(temp);
         } else {
-         oq.enqueue(element);
+         oq.enqueue(temp);
         }
      QueueSplit(q,oq,eq,i++);
 }
