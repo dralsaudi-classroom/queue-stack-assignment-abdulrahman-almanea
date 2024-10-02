@@ -8,18 +8,19 @@ public class QueueStackTester {
     }
 
     
-     public static <T> void QueueSplit(Queue<T> q, Queue<T> oq, Queue<T> eq,int i){
+      public static <T> void QueueSplit(Queue<T> q, Queue<T> oq, Queue<T> eq,int i){
+    	
         if(q.length()==0)
-        return;
-         T temp =q.serve();
+        return;  
+        T temp =q.serve();
          if (i % 2 == 0) {
          eq.enqueue(temp);
         } else {
          oq.enqueue(temp);
         }
-     QueueSplit(q,oq,eq,i++);
+     QueueSplit(q,oq,eq,i+1);
+     q.enqueue(temp);
 }
-
 
 
 
